@@ -15,6 +15,9 @@ public class WorkshopPage extends BaseModel{
     @FindBy(id = "location-search-cta")
     private WebElement submitButton;
 
+    @FindBy(xpath = "//span[text()='In-Person']")
+    private WebElement inPerson;
+
     public WorkshopPage(WebDriver driver) {
         super(driver);
     }
@@ -26,12 +29,18 @@ public class WorkshopPage extends BaseModel{
     public WorkshopPage inputText(String text) {
         searchField.sendKeys(text);
 
-        return new WorkshopPage(getDriver());
+        return this;
     }
 
     public AddressListPage clickOkGoToListPage() {
         submitButton.click();
 
         return new AddressListPage(getDriver());
+    }
+
+    public WorkshopPage clickInPerson() {
+        inPerson.click();
+
+        return this;
     }
 }
