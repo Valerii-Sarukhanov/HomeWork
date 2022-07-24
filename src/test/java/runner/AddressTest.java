@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 public class AddressTest extends BaseTest{
 
     private static final String ZIP_CODE = "10011";
+    private static final String PAGE_TITLE = "Find WW Studios & Meetings Near You | WW USA";
 
     @Test
     public void testCheckTitle() {
@@ -16,7 +17,7 @@ public class AddressTest extends BaseTest{
         String title = new WorkshopPage(getDriver())
                 .getTitleName();
 
-        Assert.assertEquals(title, "Find Your Workshop");
+        Assert.assertEquals(title, PAGE_TITLE);
     }
 
     @Test
@@ -62,7 +63,7 @@ public class AddressTest extends BaseTest{
                 .clickHours()
                 .printSchedule();
 
-        Assert.assertEquals(title, "Find Your Workshop");
+        Assert.assertEquals(title, PAGE_TITLE);
         Assert.assertEquals(firstStudioName, actualStudioName);
     }
 }
