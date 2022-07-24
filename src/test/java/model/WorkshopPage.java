@@ -6,9 +6,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class WorkshopPage extends BaseModel{
 
-    @FindBy(tagName = "h1")
-    private WebElement titleText;
-
     @FindBy(id = "location-search")
     private WebElement searchField;
 
@@ -23,7 +20,7 @@ public class WorkshopPage extends BaseModel{
     }
 
     public String getTitleName() {
-        return titleText.getText();
+        return getDriver().getTitle().replace(" ", " ");
     }
 
     public WorkshopPage inputText(String text) {
