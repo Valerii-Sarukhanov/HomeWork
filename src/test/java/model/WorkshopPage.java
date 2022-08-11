@@ -1,5 +1,6 @@
 package model;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,7 +25,7 @@ public class WorkshopPage extends BaseModel{
     }
 
     public WorkshopPage inputText(String text) {
-        searchField.sendKeys(text);
+        searchField.sendKeys(Keys.chord(Keys.CONTROL, "a"), text);
 
         return this;
     }
